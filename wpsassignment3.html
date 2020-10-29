@@ -1,0 +1,32 @@
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<body>
+<script type="text/javascript">
+	
+	var uid,regexp;
+	function formValidator()
+	{
+		uid = document.getElementById("field1");
+		regexp=/[1-4][A-Z][A-Z][0-9][0-9][A-Z][A-Z][0-9][0-9][0-9]$/;
+		if(uid.value.length == 0)
+		{
+			alert("UID is empty");
+			return;
+		}
+		else if(!uid.value.match(regexp))
+		{
+				alert(uid.value+"\n Entered UID is Wrong!!!,\n It should be in DUUDDUUDDD format");
+				return;
+		}
+	alert(uid.value+"\n UID is in correct format");
+	}
+
+</script>
+<form onsubmit="return formValidator()">
+<h4>Enter your UID in DUUDDUUDDD format : <input type="text"
+id="field1"/></h4>
+Where D stands for digit and U stands for upper case letter
+<input type="submit" value="Check Field" />
+</form>
+</body>
+</html>
